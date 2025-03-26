@@ -28,18 +28,41 @@
                 var randomWholeNumber = Math.floor(randomDecimalNumber);
                 var correctAnswer = randomWholeNumber;
                 var playerGuess;
+
+                console.log("correctAnswer " + correctAnswer);
+
+                while (playerGuess != correctAnswer) {
+
+                playerGuess = prompt("Guess a number between 1 and 100");
+                console.log(playerGuess);
+
+            
+                if (playerGuess == correctAnswer) {
+                    alert ("You got it!");
+
+                    document.getElementById("answer").textContent = correctAnswer;
+
+                    document.getElementById("startButton").textContent = "Play again";
+
+                    let bodyHTML = document.body;
+
+                    let bodyStyle = bodyHTML.style; 
+
+                    bodyStyle.animation = "celebration 1s";
+
+                    break;
+                } else if (playerGuess > correctAnswer) {
+                    alert ("Too high");
+                } else {
+                    alert ("Too low");
+                }
+
+                }
+
+
+
                 //*** YOUR JAVASCRIPT CODE HERE ***
-console.log ("The correct answer is: " + correctAnswer);
-while (playerGuess !== correctAnswer) {
-    playerGuess = parseInt(prompt("Enter your guess (0-100):"));
-    if (playerGuess < correctAnswer) {
-        alert("play again.");
-    } else if (playerGuess > correctAnswer) {
-        alert("Play again");
-    } else {
-        alert("Congratulations! You guessed the number!");
-        document.getElementById("answer").textContent = correctAnswer;
-        document.getElementById("answer").style.animation = "celebration 1s infinite";
+
 
                 '>Start</button>
 
